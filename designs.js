@@ -1,18 +1,18 @@
 // Select color input
-var color;
+var color = $('#colorPicker').val();
 $('#colorPicker').change(function() {
   color = $(this).val();
 });
 
 // Select size input
 // Height in rows
-var height;
+var height = $('#input_height').val();
 $('#input_height').change(function() {
   height = $(this).val();
 });
 
 // Width in columns
-var width;
+var width = $('#input_width').val();
 $('#input_width').change(function() {
   width = $(this).val();
 });
@@ -23,11 +23,11 @@ $('form').submit(function(event) {
   $('.row').remove();
   event.preventDefault();
 
-  if (width && height && color) {
+  if (width && height) {
     makeGrid();
   }
   else {
-    alert('Fail: Add a grid for going on! ;)')
+    alert('Add a grid for going on!');
   }
 });
 
